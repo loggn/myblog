@@ -8,12 +8,12 @@
         <language>zh-cn</language>
         <copyright>刘龙龙</copyright>
         <lastBuildDate>Wed, 16 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/test/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Maarkdown基础用法</title>
-        <link>http://localhost:1313/p/maarkdown%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</link>
+        <title>Markdown基础用法</title>
+        <link>http://localhost:1313/p/markdown%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</link>
         <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/maarkdown%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</guid>
-        <description>&lt;img src="http://localhost:1313/1729065995121.jpg" alt="Featured image of post Maarkdown基础用法" /&gt;&lt;h1 id=&#34;maarkdown基础用法持续更新中&#34;&gt;Maarkdown基础用法（持续更新中）
+        <guid>http://localhost:1313/p/markdown%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</guid>
+        <description>&lt;h1 id=&#34;markdown-基础用法持续更新中&#34;&gt;Markdown 基础用法（持续更新中）
 &lt;/h1&gt;&lt;hr&gt;
 &lt;h2 id=&#34;1-标题&#34;&gt;1. 标题
 &lt;/h2&gt;&lt;ul&gt;
@@ -30,7 +30,7 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;加粗&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;加粗加斜体&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;加粗加斜体&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3-列表&#34;&gt;3. 列表
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;无序列表：使用 -、* 或者 +。&lt;/li&gt;
@@ -64,8 +64,8 @@
 &gt;。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.baidu.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;百度&lt;/a&gt;
-&lt;img src=&#34;https://example.com/image.jpg&#34;
+    &gt;百度&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://pss.bdstatic.com/static/superman/img/logo/bd_logo1-66368c33f8.png&#34;
 	
 	
 	
@@ -77,11 +77,12 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;5-引用&#34;&gt;5. 引用
 &lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;使用 &amp;gt; 表示引用。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;使用 &amp;gt; 表示引用。
 &lt;blockquote&gt;
 &lt;p&gt;这是一个引用&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;6-代码&#34;&gt;6. 代码
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;行内代码：使用反引号 `&lt;/li&gt;
@@ -103,18 +104,18 @@
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th&gt;表头1&lt;/th&gt;
-          &lt;th&gt;表头2&lt;/th&gt;
+          &lt;th&gt;表头 1&lt;/th&gt;
+          &lt;th&gt;表头 2&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;内容1&lt;/td&gt;
-          &lt;td&gt;内容2&lt;/td&gt;
+          &lt;td&gt;内容 1&lt;/td&gt;
+          &lt;td&gt;内容 2&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;内容3&lt;/td&gt;
-          &lt;td&gt;内容4&lt;/td&gt;
+          &lt;td&gt;内容 3&lt;/td&gt;
+          &lt;td&gt;内容 4&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;

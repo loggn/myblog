@@ -1,8 +1,13 @@
-date = '2024-10-16T21:03:14+08:00'
-draft = true
-title = '通过hugo创建个人博客'
-
 ---
+title: 通过hugo创建个人博客
+description: 持续更新中
+date: 2024-10-16T21:03:14+08:00
+slug: 通过hugo创建个人博客
+categories:
+  - blog
+  - 博客
+---
+
 # 通过 hugo 创建个人博客
 
 - [hugo 官网](https://gohugo.io/)
