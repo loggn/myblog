@@ -72,7 +72,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;ps：&lt;code&gt;https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke&lt;/code&gt;为示例&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;eg：&lt;code&gt;https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke&lt;/code&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;然后修改 myblog 文件夹中的 config.toml 文件，将主题设置为 ananke&lt;/li&gt;
 &lt;/ol&gt;
@@ -104,7 +104,8 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.\hugo.exe new content 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
+&lt;/div&gt;&lt;p&gt;eg：&lt;code&gt;.\hugo.exe new content post/通过hugo创建个人博客/通过hugo创建个人博客.md&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;未完待续&lt;/li&gt;
 &lt;/ul&gt;
 </description>

@@ -7,7 +7,16 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>刘龙龙</copyright>
-        <lastBuildDate>Wed, 16 Oct 2024 21:03:14 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 16 Oct 2024 21:15:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Git基础用法</title>
+        <link>http://localhost:1313/p/git%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</link>
+        <pubDate>Wed, 16 Oct 2024 21:15:12 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/git%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</guid>
+        <description>&lt;h1 id=&#34;git基础用法&#34;&gt;Git基础用法
+&lt;/h1&gt;</description>
+        </item>
+        <item>
         <title>通过hugo创建个人博客</title>
         <link>http://localhost:1313/p/%E9%80%9A%E8%BF%87hugo%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
         <pubDate>Wed, 16 Oct 2024 21:03:14 +0800</pubDate>
@@ -72,7 +81,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;ps：&lt;code&gt;https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke&lt;/code&gt;为示例&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;eg：&lt;code&gt;https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke&lt;/code&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;然后修改 myblog 文件夹中的 config.toml 文件，将主题设置为 ananke&lt;/li&gt;
 &lt;/ol&gt;
@@ -104,7 +113,8 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.\hugo.exe new content 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
+&lt;/div&gt;&lt;p&gt;eg：&lt;code&gt;.\hugo.exe new content post/通过hugo创建个人博客/通过hugo创建个人博客.md&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;未完待续&lt;/li&gt;
 &lt;/ul&gt;
 </description>

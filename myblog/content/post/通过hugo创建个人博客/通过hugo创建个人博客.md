@@ -49,7 +49,7 @@ git init
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 ```
 
-ps：`https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke`为示例
+eg：`https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke`
 
 2. 然后修改 myblog 文件夹中的 config.toml 文件，将主题设置为 ananke
 
@@ -69,4 +69,5 @@ theme = "ananke"
 ```
 .\hugo.exe new content 
 ```
+eg：`.\hugo.exe new content post/通过hugo创建个人博客/通过hugo创建个人博客.md`
 * 未完待续

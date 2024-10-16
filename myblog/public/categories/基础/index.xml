@@ -7,7 +7,16 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>刘龙龙</copyright>
-        <lastBuildDate>Wed, 16 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 16 Oct 2024 21:15:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Git基础用法</title>
+        <link>http://localhost:1313/p/git%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</link>
+        <pubDate>Wed, 16 Oct 2024 21:15:12 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/git%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</guid>
+        <description>&lt;h1 id=&#34;git基础用法&#34;&gt;Git基础用法
+&lt;/h1&gt;</description>
+        </item>
+        <item>
         <title>Markdown基础用法</title>
         <link>http://localhost:1313/p/markdown%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</link>
         <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="date = &lsquo;2024-10-16T21:03:14+08:00&rsquo; draft = true title = &lsquo;通过hugo创建个人博客&rsquo;\n通过 hugo 创建个人博客 hugo 官网 hugo 中文文档 一、安装 Hugo ps: 这里默认已经安装好了 Git、Go等其它工具\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="date: 2024-10-16T21:15:12+08:00 draft: true title: Git基础用法\n">
 <title></title>
 
 <link rel='canonical' href='http://localhost:1313/p/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="">
-<meta property='og:description' content="date = &lsquo;2024-10-16T21:03:14+08:00&rsquo; draft = true title = &lsquo;通过hugo创建个人博客&rsquo;\n通过 hugo 创建个人博客 hugo 官网 hugo 中文文档 一、安装 Hugo ps: 这里默认已经安装好了 Git、Go等其它工具\n">
+<meta property='og:description' content="date: 2024-10-16T21:15:12+08:00 draft: true title: Git基础用法\n">
 <meta property='og:url' content='http://localhost:1313/p/'>
 <meta property='og:site_name' content='刘龙龙'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
 <meta name="twitter:title" content="">
-<meta name="twitter:description" content="date = &lsquo;2024-10-16T21:03:14+08:00&rsquo; draft = true title = &lsquo;通过hugo创建个人博客&rsquo;\n通过 hugo 创建个人博客 hugo 官网 hugo 中文文档 一、安装 Hugo ps: 这里默认已经安装好了 Git、Go等其它工具\n">
+<meta name="twitter:description" content="date: 2024-10-16T21:15:12+08:00 draft: true title: Git基础用法\n">
     </head>
     <body class="
     article-page
@@ -266,49 +266,7 @@
     </ol>
 </aside>
 
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">目录</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li><a href="#一安装-hugo">一、安装 Hugo</a></li>
-    <li><a href="#二添加内容">二、添加内容</a>
-      <ol>
-        <li><a href="#1添加主题">1、添加主题</a>
-          <ol>
-            <li><a href="#命令行方式">命令行方式</a></li>
-            <li><a href="#自行下载方式推荐">自行下载方式（推荐）</a></li>
-            <li><a href="#一些hugo的命令指令">一些hugo的命令指令</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-  </ol>
-</nav>
-        </div>
-    </section>
-
-            
-        
-    </aside>
-
+    
 
             <main class="main full-width">
     <article class="main-article">
@@ -358,104 +316,9 @@
     <section class="article-content">
     
     
-    <p>date = &lsquo;2024-10-16T21:03:14+08:00&rsquo;
-draft = true
-title = &lsquo;通过hugo创建个人博客&rsquo;</p>
-<hr>
-<h1 id="通过-hugo-创建个人博客">通过 hugo 创建个人博客
-</h1><ul>
-<li><a class="link" href="https://gohugo.io/"  target="_blank" rel="noopener"
-    >hugo 官网</a></li>
-<li><a class="link" href="https://hugo.opendocs.io/getting-started/"  target="_blank" rel="noopener"
-    >hugo 中文文档</a></li>
-</ul>
-<hr>
-<h2 id="一安装-hugo">一、安装 Hugo
-</h2><p>ps: 这里默认已经安装好了 Git、Go等其它工具</p>
-<ol>
-<li>
-<p>进入<a class="link" href="https://github.com/gohugoio/hugo/releases/tag/v0.136.0"  target="_blank" rel="noopener"
-    >hugo 下载链接</a>中下载压缩包，推荐下载扩展版</p>
-</li>
-<li>
-<p>解压压缩包至自己准备好的文件夹</p>
-</li>
-<li>
-<p>进入该文件夹，并在命令行中输入以下命令来创建一个新的站点</p>
-</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    .\hugo.exe new site myblog
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="4">
-<li>创建新站点后就可以进入 myblog 文件夹中运行一下 Hugo 开发服务器来测试是否安装成功</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    cd myblog
-</span></span><span class="line"><span class="cl">    ..\hugo.exe server -D
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="二添加内容">二、添加内容
-</h2><h3 id="1添加主题">1、添加主题
-</h3><h4 id="命令行方式">命令行方式
-</h4><ol>
-<li>输入命令添加主题</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git init
-</span></span><span class="line"><span class="cl">git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>ps：<code>https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke</code>为示例</p>
-<ol start="2">
-<li>然后修改 myblog 文件夹中的 config.toml 文件，将主题设置为 ananke</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">theme = &#34;ananke&#34;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="自行下载方式推荐">自行下载方式（推荐）
-</h4><ol>
-<li>进入<a class="link" href="https://gohugo.io/"  target="_blank" rel="noopener"
-    >hugo 官网</a>，直接点击<strong>Themes</strong>来选择自己喜欢的主题进行下载</li>
-<li>将下载好的压缩包放入 myblog/themes 文件夹中并解压</li>
-<li>将配置文件复制到根目录中，替换根目录中原本的配置文件（具体主题之间会有一定差异）</li>
-<li>完成后运行查看是否添加成功</li>
-</ol>
-<h4 id="一些hugo的命令指令">一些hugo的命令指令
-</h4><ul>
-<li>添加新的文章内容</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.\hugo.exe new content 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>未完待续</li>
-</ul>
+    <p>date: 2024-10-16T21:15:12+08:00
+draft: true
+title: Git基础用法</p>
 
 </section>
 
