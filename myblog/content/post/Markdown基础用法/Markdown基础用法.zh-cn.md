@@ -1,15 +1,15 @@
 ---
-title: Maarkdown基础用法
+title: Markdown基础用法
 description: 持续更新中
 date: 2024-10-16
-slug: Maarkdown基础用法
+slug: Markdown基础用法
 # image: 1729065995121.jpg
 categories:
   - Test
   - 测试
 ---
 
-# Maarkdown 基础用法（持续更新中）
+# Markdown 基础用法（持续更新中）
 
 ---
 
