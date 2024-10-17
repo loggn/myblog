@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>刘龙龙</copyright>
-        <lastBuildDate>Wed, 16 Oct 2024 22:01:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 17 Oct 2024 13:07:20 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>网络</title>
+        <link>http://localhost:1313/categories/%E7%BD%91%E7%BB%9C/</link>
+        <pubDate>Thu, 17 Oct 2024 13:07:20 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E7%BD%91%E7%BB%9C/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Gorm</title>
         <link>http://localhost:1313/categories/gorm/</link>
         <pubDate>Wed, 16 Oct 2024 22:01:54 +0800</pubDate>

@@ -3,6 +3,7 @@ title: 对gorm的理解
 description: 持续更新中
 date: 2024-10-16T22:01:54+08:00
 slug: 对gorm的理解
+image: https://ucarecdn.com/9aa429b5-25e4-432f-a9f6-899820700e41/
 categories:
   - gorm
   - 理解输出

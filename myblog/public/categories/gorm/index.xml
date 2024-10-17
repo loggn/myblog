@@ -13,8 +13,33 @@
         <pubDate>Wed, 16 Oct 2024 22:01:54 +0800</pubDate>
         
         <guid>http://localhost:1313/p/%E5%AF%B9gorm%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
-        <description>&lt;h1 id=&#34;对gorm的理解&#34;&gt;对gorm的理解
-&lt;/h1&gt;</description>
+        <description>&lt;img src="https://th.bing.com/th/id/OIP.rY6qlY3wKblya3n1Es_zfgHaCk?rs=1&amp;pid=ImgDetMain" alt="Featured image of post 对gorm的理解" /&gt;&lt;h1 id=&#34;对gorm的理解&#34;&gt;对gorm的理解
+&lt;/h1&gt;&lt;h2 id=&#34;gorm简介&#34;&gt;Gorm简介
+&lt;/h2&gt;&lt;p&gt;Gorm 是 Go 语言中常用的 ORM（对象关系映射）框架，帮助开发者以面向对象的方式操作数据库，简化了 SQL 语句的编写。&lt;/p&gt;
+&lt;h3 id=&#34;特点&#34;&gt;特点：
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;自动迁移：Gorm 可以根据结构体自动创建、更新数据库表，支持自动迁移（Auto Migration）。这使得表结构的维护更加简单。&lt;/li&gt;
+&lt;li&gt;丰富的查询功能：支持链式操作，查询语句直观易懂，支持条件查询、关联查询、批量查询等复杂操作。&lt;/li&gt;
+&lt;li&gt;事务支持：Gorm 提供了对事务的支持，允许开发者通过 DB.Transaction() 方法简便地执行事务操作，确保数据一致性。&lt;/li&gt;
+&lt;li&gt;钩子函数：支持生命周期钩子函数（如 BeforeCreate、AfterCreate 等），在数据操作前后执行特定逻辑，方便实现一些业务逻辑。&lt;/li&gt;
+&lt;li&gt;多数据库支持：Gorm 支持常见的关系型数据库如 MySQL、PostgreSQL、SQLite 等，跨数据库切换较为方便。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;核心功能&#34;&gt;核心功能：
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;模型定义：通过定义结构体，Gorm 可以将 Go 的结构体映射为数据库中的表，如字段类型、约束等都可以通过结构体的标签（Tag）定义。&lt;/li&gt;
+&lt;li&gt;查询操作：支持常见的查询操作，如 First() 查找第一条记录、Find() 查找多条记录，还可以通过 Where() 方法实现条件查询。&lt;/li&gt;
+&lt;li&gt;关联查询：Gorm 支持模型之间的一对一、一对多、多对多等关联关系，提供了 Preload() 和 Joins() 等方法实现关联数据的查询。&lt;/li&gt;
+&lt;li&gt;创建、更新、删除：Gorm 提供了简便的创建、更新和删除数据的方法，如 Create() 创建记录，Save() 保存或更新记录，Delete() 删除记录。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;事务管理&#34;&gt;事务管理：
+&lt;/h3&gt;&lt;p&gt;支持通过 Transaction() 方法进行事务管理，开发者可以在同一个事务中执行多个数据库操作，确保数据的一致性。&lt;/p&gt;
+&lt;h3 id=&#34;适用场景&#34;&gt;适用场景：
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Gorm 适用于 Go 项目中与数据库交互频繁的场景，特别是需要简化数据库操作并保证代码可读性的项目。&lt;/li&gt;
+&lt;li&gt;由于 Gorm 提供了丰富的 ORM 功能，适合用在需要与多个表进行复杂交互的项目中，比如电商平台、企业级管理系统等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;常用的命令语句&#34;&gt;常用的命令语句
+&lt;/h2&gt;</description>
         </item>
         
     </channel>

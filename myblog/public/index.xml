@@ -13,9 +13,15 @@
         <pubDate>Thu, 17 Oct 2024 13:07:20 +0800</pubDate>
         
         <guid>http://localhost:1313/p/%E4%BF%A1%E9%94%90%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</guid>
-        <description>&lt;h1 id=&#34;信锐网络工程师笔记整理&#34;&gt;信锐网络工程师笔记整理
-&lt;/h1&gt;&lt;h2 id=&#34;无线项目管理流程&#34;&gt;无线项目管理流程
-&lt;/h2&gt;&lt;table&gt;
+        <description>&lt;img src="https://download.sangfor.com.cn/71562eb90eca447abe3a7733062e06eb.jpg" alt="Featured image of post 信锐网络工程师笔记整理" /&gt;&lt;h1 id=&#34;信锐网络工程师笔记整理&#34;&gt;信锐网络工程师笔记整理
+&lt;/h1&gt;&lt;h3 id=&#34;项目管理工具获取&#34;&gt;项目管理工具获取
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;项目管理的材料可以在&lt;code&gt;“信锐技术服务中心”微信小程序-&amp;gt;资料库-&amp;gt;服务工具-&amp;gt;项目交付工具包&lt;/code&gt;中获取。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ps：需要点击“我的”进行登录后才能查
+看。&lt;/p&gt;
+&lt;h3 id=&#34;无线项目管理流程&#34;&gt;无线项目管理流程
+&lt;/h3&gt;&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
           &lt;th&gt;&lt;/th&gt;
@@ -42,7 +48,63 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-</description>
+&lt;h4 id=&#34;启动阶段&#34;&gt;启动阶段
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;项目相关资料：招标文件、设计方案、设备清单&lt;/li&gt;
+&lt;li&gt;识别并理解干系人预期&lt;/li&gt;
+&lt;li&gt;明确功能预期和交付时间预期&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;规划阶段&#34;&gt;规划阶段
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;需求梳理：挖掘客户潜在需求
+&lt;ul&gt;
+&lt;li&gt;业务需求：
+&lt;ul&gt;
+&lt;li&gt;业务需求:了解客户的使用场景、客户核心业务、业务使用群体、终端使用类型，识别出客户业务中潜在的需求&lt;/li&gt;
+&lt;li&gt;功能需求：客户基于自身业务提出的功能需求&lt;/li&gt;
+&lt;li&gt;服务需求：客户在交付过程中或售后运维中，基于产品或业务需求所提出的服务性需求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;管理需求：
+&lt;ul&gt;
+&lt;li&gt;运维人员：运维人员更加关注产品基本功能的实现与后期运维管理方面的需求&lt;/li&gt;
+&lt;li&gt;客户高层：客户高层更加关注当前项目给业务或生产带来的价值以及项目背后的影响&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;业务画像：根据客户业务描绘业务画像&lt;/li&gt;
+&lt;li&gt;实施方案：形成最终方案&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;执行阶段&#34;&gt;执行阶段
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;施工安装&lt;/th&gt;
+          &lt;th&gt;调试配置&lt;/th&gt;
+          &lt;th&gt;业务联调&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;施工安装校验&lt;/td&gt;
+          &lt;td&gt;必配项 &lt;br&gt; 已知问题规避&lt;/td&gt;
+          &lt;td&gt;核对实施方案功能配置&lt;br&gt;关注功能实现及业务网优验收&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;问题管理&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;全过程问题追踪表&lt;br&gt;问题跟踪闭环&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;特殊场景工勘&#34;&gt;特殊场景工勘
+&lt;/h3&gt;</description>
         </item>
         <item>
         <title>对gorm的理解</title>
@@ -50,7 +112,7 @@
         <pubDate>Wed, 16 Oct 2024 22:01:54 +0800</pubDate>
         
         <guid>http://localhost:1313/p/%E5%AF%B9gorm%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
-        <description>&lt;h1 id=&#34;对gorm的理解&#34;&gt;对gorm的理解
+        <description>&lt;img src="https://ucarecdn.com/9aa429b5-25e4-432f-a9f6-899820700e41/" alt="Featured image of post 对gorm的理解" /&gt;&lt;h1 id=&#34;对gorm的理解&#34;&gt;对gorm的理解
 &lt;/h1&gt;&lt;h2 id=&#34;gorm简介&#34;&gt;Gorm简介
 &lt;/h2&gt;&lt;p&gt;Gorm 是 Go 语言中常用的 ORM（对象关系映射）框架，帮助开发者以面向对象的方式操作数据库，简化了 SQL 语句的编写。&lt;/p&gt;
 &lt;h3 id=&#34;特点&#34;&gt;特点：
@@ -86,7 +148,7 @@
         <guid>http://localhost:1313/p/%E5%AF%B9gin%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
         <description>&lt;h1 id=&#34;对gin的理解&#34;&gt;对Gin的理解
 &lt;/h1&gt;&lt;h2 id=&#34;gin简介&#34;&gt;Gin简介
-&lt;/h2&gt;&lt;p&gt;Gin 框架是 Go 语言中常用的一个高效、轻量级的 Web 框架。它的设计目标是简化 HTTP 服务器的开发，提供易用的接口，同时保证性能优势。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;Gin是一个使用Go语言开发的Web框架。 它提供类似Martini的API,是 Go 语言中常用的一个高效、轻量级的 Web 框架。它的设计目标是简化 HTTP 服务器的开发，提供易用的接口，同时保证性能优势。&lt;/p&gt;
 &lt;h3 id=&#34;特点&#34;&gt;特点
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;高性能：Gin 是基于 net/http 标准库构建的，具有非常好的性能，适合处理高并发场景。&lt;/li&gt;
@@ -658,90 +720,27 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;9流程图暂存目前还没有试过&#34;&gt;9.流程图(暂存，目前还没有试过)
-&lt;/h2&gt;&lt;p&gt;使用 Mermaid 进行流程图绘制的格式整理：&lt;/p&gt;
-&lt;h3 id=&#34;基本结构&#34;&gt;基本结构
-&lt;/h3&gt;&lt;p&gt;mermaid&lt;/p&gt;
-&lt;p&gt;graph LR;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;A[开始] --&amp;gt; B[流程步骤1];
-B --&amp;gt; C[条件判断];
-C --&amp;gt;|是| D[流程步骤2];
-C --&amp;gt;|否| E[流程步骤3];
-D --&amp;gt; F[结束];
-E --&amp;gt; F;
-&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;graph LR&lt;/code&gt;&lt;/strong&gt;: 图的方向，常见方向有：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;TD&lt;/code&gt;：从上到下 (Top to Down)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;LR&lt;/code&gt;：从左到右 (Left to Right)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;BT&lt;/code&gt;：从下到上 (Bottom to Top)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;RL&lt;/code&gt;：从右到左 (Right to Left)&lt;/li&gt;
+&lt;li&gt;在 Markdown 表格中，可以通过 &lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt; 标签实现单元格内的换行&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;节点&lt;/strong&gt;：用方括号 &lt;code&gt;[ ]&lt;/code&gt; 或者圆括号 &lt;code&gt;( )&lt;/code&gt; 表示。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;A[节点内容]&lt;/code&gt;：方框节点&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;A(节点内容)&lt;/code&gt;：圆角节点&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;箭头&lt;/strong&gt;：&lt;code&gt;--&amp;gt;&lt;/code&gt; 表示连接线，连接两个节点。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;条件判断&#34;&gt;条件判断
-&lt;/h3&gt;&lt;p&gt;使用 &lt;code&gt;{}&lt;/code&gt; 表示条件判断节点，可以通过 &lt;code&gt;|是|&lt;/code&gt; 和 &lt;code&gt;|否|&lt;/code&gt; 分别表示不同的分支。&lt;/p&gt;
-&lt;p&gt;graph TD;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;A[开始] --&amp;gt; B{是否满足条件?};
-B --&amp;gt;|是| C[执行操作1];
-B --&amp;gt;|否| D[执行操作2];
-C --&amp;gt; E[结束];
-D --&amp;gt; E;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;样式定义&#34;&gt;样式定义
-&lt;/h3&gt;&lt;p&gt;Mermaid 允许给节点和线条定义不同的样式，以增强流程图的视觉效果：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;节点样式：A[样式节点] 定义方框，A(样式节点) 定义圆角矩形。&lt;/li&gt;
-&lt;li&gt;线条样式：-.-&amp;gt; 表示虚线，==&amp;gt; 表示粗箭头。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;graph LR;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;A[开始] --&amp;gt; B[流程1];
-B -.-&amp;gt; C[虚线连接];
-C ==&amp;gt; D[粗箭头连接];
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;子流程与分支&#34;&gt;子流程与分支
-&lt;/h3&gt;&lt;p&gt;可以使用子流程（Subgraph）来将流程图中的步骤进行逻辑划分。&lt;/p&gt;
-&lt;p&gt;graph TD;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;subgraph 子流程1
-    A1 --&amp;gt; A2;
-    A2 --&amp;gt; A3;
-end;
-subgraph 子流程2
-    B1 --&amp;gt; B2;
-    B2 --&amp;gt; B3;
-end;
-A3 --&amp;gt; B1;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;完整-markdown-mermaid-流程图示例&#34;&gt;完整 Markdown Mermaid 流程图示例
-&lt;/h3&gt;&lt;p&gt;mermaid&lt;/p&gt;
-&lt;p&gt;graph TD;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;A[用户登录] --&amp;gt; B{是否登录成功?};
-B --&amp;gt;|是| C[进入主页];
-B --&amp;gt;|否| D[显示错误信息];
-C --&amp;gt; E[操作1];
-C --&amp;gt; F[操作2];
-F --&amp;gt; G[注销];
-G --&amp;gt; A;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;总结&#34;&gt;总结
-&lt;/h3&gt;&lt;p&gt;Markdown 流程图格式主要依赖于 Mermaid 语法，核心格式包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;graph TD/LR 定义流程图的方向。&lt;/li&gt;
-&lt;li&gt;使用 [] 或 () 定义节点，{} 定义判断条件。&lt;/li&gt;
-&lt;li&gt;使用 &amp;ndash;&amp;gt; 连接各个节点，使用 |是| 和 |否| 定义判断分支。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;姓名&lt;/th&gt;
+          &lt;th&gt;描述&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;张三&lt;/td&gt;
+          &lt;td&gt;学生&lt;br&gt;擅长编程&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;李四&lt;/td&gt;
+          &lt;td&gt;老师&lt;br&gt;数学专业&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 </description>
         </item>
         <item>
