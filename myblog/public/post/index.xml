@@ -14,7 +14,35 @@
         
         <guid>http://localhost:1313/p/%E4%BF%A1%E9%94%90%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</guid>
         <description>&lt;h1 id=&#34;信锐网络工程师笔记整理&#34;&gt;信锐网络工程师笔记整理
-&lt;/h1&gt;</description>
+&lt;/h1&gt;&lt;h2 id=&#34;无线项目管理流程&#34;&gt;无线项目管理流程
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;启动阶段&lt;/th&gt;
+          &lt;th&gt;规划阶段&lt;/th&gt;
+          &lt;th&gt;执行阶段&lt;/th&gt;
+          &lt;th&gt;收尾阶段&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;lcare交付系统&lt;/td&gt;
+          &lt;td&gt;生成实施单&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;项目完结+满意回访&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;工程师&lt;/td&gt;
+          &lt;td&gt;项目信息获取-&amp;gt;项目启动会&lt;/td&gt;
+          &lt;td&gt;需求+业务画像梳理-&amp;gt;方案设计&lt;/td&gt;
+          &lt;td&gt;设备施工安装+基础调试-&amp;gt;业务联调&lt;/td&gt;
+          &lt;td&gt;质量工具检查+预验收-&amp;gt;交付确认+培训+移交+服务方案&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
         </item>
         <item>
         <title>对gorm的理解</title>
@@ -47,7 +75,7 @@
 &lt;li&gt;Gorm 适用于 Go 项目中与数据库交互频繁的场景，特别是需要简化数据库操作并保证代码可读性的项目。&lt;/li&gt;
 &lt;li&gt;由于 Gorm 提供了丰富的 ORM 功能，适合用在需要与多个表进行复杂交互的项目中，比如电商平台、企业级管理系统等。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;用的命令语句&#34;&gt;用的命令语句
+&lt;h2 id=&#34;常用的命令语句&#34;&gt;常用的命令语句
 &lt;/h2&gt;</description>
         </item>
         <item>
@@ -630,6 +658,90 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;h2 id=&#34;9流程图暂存目前还没有试过&#34;&gt;9.流程图(暂存，目前还没有试过)
+&lt;/h2&gt;&lt;p&gt;使用 Mermaid 进行流程图绘制的格式整理：&lt;/p&gt;
+&lt;h3 id=&#34;基本结构&#34;&gt;基本结构
+&lt;/h3&gt;&lt;p&gt;mermaid&lt;/p&gt;
+&lt;p&gt;graph LR;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;A[开始] --&amp;gt; B[流程步骤1];
+B --&amp;gt; C[条件判断];
+C --&amp;gt;|是| D[流程步骤2];
+C --&amp;gt;|否| E[流程步骤3];
+D --&amp;gt; F[结束];
+E --&amp;gt; F;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;graph LR&lt;/code&gt;&lt;/strong&gt;: 图的方向，常见方向有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;TD&lt;/code&gt;：从上到下 (Top to Down)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LR&lt;/code&gt;：从左到右 (Left to Right)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BT&lt;/code&gt;：从下到上 (Bottom to Top)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;RL&lt;/code&gt;：从右到左 (Right to Left)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;节点&lt;/strong&gt;：用方括号 &lt;code&gt;[ ]&lt;/code&gt; 或者圆括号 &lt;code&gt;( )&lt;/code&gt; 表示。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;A[节点内容]&lt;/code&gt;：方框节点&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;A(节点内容)&lt;/code&gt;：圆角节点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;箭头&lt;/strong&gt;：&lt;code&gt;--&amp;gt;&lt;/code&gt; 表示连接线，连接两个节点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;条件判断&#34;&gt;条件判断
+&lt;/h3&gt;&lt;p&gt;使用 &lt;code&gt;{}&lt;/code&gt; 表示条件判断节点，可以通过 &lt;code&gt;|是|&lt;/code&gt; 和 &lt;code&gt;|否|&lt;/code&gt; 分别表示不同的分支。&lt;/p&gt;
+&lt;p&gt;graph TD;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;A[开始] --&amp;gt; B{是否满足条件?};
+B --&amp;gt;|是| C[执行操作1];
+B --&amp;gt;|否| D[执行操作2];
+C --&amp;gt; E[结束];
+D --&amp;gt; E;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;样式定义&#34;&gt;样式定义
+&lt;/h3&gt;&lt;p&gt;Mermaid 允许给节点和线条定义不同的样式，以增强流程图的视觉效果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;节点样式：A[样式节点] 定义方框，A(样式节点) 定义圆角矩形。&lt;/li&gt;
+&lt;li&gt;线条样式：-.-&amp;gt; 表示虚线，==&amp;gt; 表示粗箭头。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;graph LR;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;A[开始] --&amp;gt; B[流程1];
+B -.-&amp;gt; C[虚线连接];
+C ==&amp;gt; D[粗箭头连接];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;子流程与分支&#34;&gt;子流程与分支
+&lt;/h3&gt;&lt;p&gt;可以使用子流程（Subgraph）来将流程图中的步骤进行逻辑划分。&lt;/p&gt;
+&lt;p&gt;graph TD;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;subgraph 子流程1
+    A1 --&amp;gt; A2;
+    A2 --&amp;gt; A3;
+end;
+subgraph 子流程2
+    B1 --&amp;gt; B2;
+    B2 --&amp;gt; B3;
+end;
+A3 --&amp;gt; B1;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;完整-markdown-mermaid-流程图示例&#34;&gt;完整 Markdown Mermaid 流程图示例
+&lt;/h3&gt;&lt;p&gt;mermaid&lt;/p&gt;
+&lt;p&gt;graph TD;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;A[用户登录] --&amp;gt; B{是否登录成功?};
+B --&amp;gt;|是| C[进入主页];
+B --&amp;gt;|否| D[显示错误信息];
+C --&amp;gt; E[操作1];
+C --&amp;gt; F[操作2];
+F --&amp;gt; G[注销];
+G --&amp;gt; A;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;总结&#34;&gt;总结
+&lt;/h3&gt;&lt;p&gt;Markdown 流程图格式主要依赖于 Mermaid 语法，核心格式包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;graph TD/LR 定义流程图的方向。&lt;/li&gt;
+&lt;li&gt;使用 [] 或 () 定义节点，{} 定义判断条件。&lt;/li&gt;
+&lt;li&gt;使用 &amp;ndash;&amp;gt; 连接各个节点，使用 |是| 和 |否| 定义判断分支。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>

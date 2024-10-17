@@ -284,6 +284,16 @@
     <li><a href="#6-代码">6. 代码</a></li>
     <li><a href="#7-分隔线">7. 分隔线</a></li>
     <li><a href="#8-表格">8. 表格</a></li>
+    <li><a href="#9流程图暂存目前还没有试过">9.流程图(暂存，目前还没有试过)</a>
+      <ol>
+        <li><a href="#基本结构">基本结构</a></li>
+        <li><a href="#条件判断">条件判断</a></li>
+        <li><a href="#样式定义">样式定义</a></li>
+        <li><a href="#子流程与分支">子流程与分支</a></li>
+        <li><a href="#完整-markdown-mermaid-流程图示例">完整 Markdown Mermaid 流程图示例</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -364,7 +374,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -485,6 +495,90 @@
       </tr>
   </tbody>
 </table></div>
+<h2 id="9流程图暂存目前还没有试过">9.流程图(暂存，目前还没有试过)
+</h2><p>使用 Mermaid 进行流程图绘制的格式整理：</p>
+<h3 id="基本结构">基本结构
+</h3><p>mermaid</p>
+<p>graph LR;</p>
+<pre><code>A[开始] --&gt; B[流程步骤1];
+B --&gt; C[条件判断];
+C --&gt;|是| D[流程步骤2];
+C --&gt;|否| E[流程步骤3];
+D --&gt; F[结束];
+E --&gt; F;
+</code></pre>
+<ul>
+<li>
+<p><strong><code>graph LR</code></strong>: 图的方向，常见方向有：</p>
+<ul>
+<li><code>TD</code>：从上到下 (Top to Down)</li>
+<li><code>LR</code>：从左到右 (Left to Right)</li>
+<li><code>BT</code>：从下到上 (Bottom to Top)</li>
+<li><code>RL</code>：从右到左 (Right to Left)</li>
+</ul>
+</li>
+<li>
+<p><strong>节点</strong>：用方括号 <code>[ ]</code> 或者圆括号 <code>( )</code> 表示。</p>
+<ul>
+<li><code>A[节点内容]</code>：方框节点</li>
+<li><code>A(节点内容)</code>：圆角节点</li>
+</ul>
+</li>
+<li>
+<p><strong>箭头</strong>：<code>--&gt;</code> 表示连接线，连接两个节点。</p>
+</li>
+</ul>
+<h3 id="条件判断">条件判断
+</h3><p>使用 <code>{}</code> 表示条件判断节点，可以通过 <code>|是|</code> 和 <code>|否|</code> 分别表示不同的分支。</p>
+<p>graph TD;</p>
+<pre><code>A[开始] --&gt; B{是否满足条件?};
+B --&gt;|是| C[执行操作1];
+B --&gt;|否| D[执行操作2];
+C --&gt; E[结束];
+D --&gt; E;
+</code></pre>
+<h3 id="样式定义">样式定义
+</h3><p>Mermaid 允许给节点和线条定义不同的样式，以增强流程图的视觉效果：</p>
+<ul>
+<li>节点样式：A[样式节点] 定义方框，A(样式节点) 定义圆角矩形。</li>
+<li>线条样式：-.-&gt; 表示虚线，==&gt; 表示粗箭头。</li>
+</ul>
+<p>graph LR;</p>
+<pre><code>A[开始] --&gt; B[流程1];
+B -.-&gt; C[虚线连接];
+C ==&gt; D[粗箭头连接];
+</code></pre>
+<h3 id="子流程与分支">子流程与分支
+</h3><p>可以使用子流程（Subgraph）来将流程图中的步骤进行逻辑划分。</p>
+<p>graph TD;</p>
+<pre><code>subgraph 子流程1
+    A1 --&gt; A2;
+    A2 --&gt; A3;
+end;
+subgraph 子流程2
+    B1 --&gt; B2;
+    B2 --&gt; B3;
+end;
+A3 --&gt; B1;
+</code></pre>
+<h3 id="完整-markdown-mermaid-流程图示例">完整 Markdown Mermaid 流程图示例
+</h3><p>mermaid</p>
+<p>graph TD;</p>
+<pre><code>A[用户登录] --&gt; B{是否登录成功?};
+B --&gt;|是| C[进入主页];
+B --&gt;|否| D[显示错误信息];
+C --&gt; E[操作1];
+C --&gt; F[操作2];
+F --&gt; G[注销];
+G --&gt; A;
+</code></pre>
+<h3 id="总结">总结
+</h3><p>Markdown 流程图格式主要依赖于 Mermaid 语法，核心格式包括：</p>
+<ul>
+<li>graph TD/LR 定义流程图的方向。</li>
+<li>使用 [] 或 () 定义节点，{} 定义判断条件。</li>
+<li>使用 &ndash;&gt; 连接各个节点，使用 |是| 和 |否| 定义判断分支。</li>
+</ul>
 
 </section>
 
