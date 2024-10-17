@@ -13,7 +13,27 @@
         <pubDate>Wed, 16 Oct 2024 21:40:40 +0800</pubDate>
         
         <guid>http://localhost:1313/p/%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
-        <description></description>
+        <description>&lt;img src="https://i02piccdn.sogoucdn.com/ed6bedb319d64f56" alt="Featured image of post 常用快捷键" /&gt;&lt;h1 id=&#34;常用快捷键&#34;&gt;常用快捷键
+&lt;/h1&gt;&lt;h2 id=&#34;vscode常用快捷键&#34;&gt;vscode常用快捷键
+&lt;/h2&gt;&lt;h3 id=&#34;代码编辑&#34;&gt;代码编辑
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;格式化代码：&lt;code&gt;Shift + Alt + F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;快速注释/取消注释：&lt;code&gt;Ctrl + /&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;向下复制一行：&lt;code&gt;Shift + Alt + ↓&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;向上复制一行：&lt;code&gt;Shift + Alt + ↑&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;向下移动一行：&lt;code&gt;Alt + ↓&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;向上移动一行: &lt;code&gt;Alt + ↑&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;删除一行：&lt;code&gt;Ctrl + Shift + K&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;选择当前行：&lt;code&gt;Ctrl + L&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;查找与替换&#34;&gt;查找与替换
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;查找：&lt;code&gt;Ctrl + F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查找并替换：&lt;code&gt;Ctrl + H&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;全局查找：&lt;code&gt;Ctrl + Shift + F&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;补充未完待续&#34;&gt;补充(未完待续)
+&lt;/h3&gt;</description>
         </item>
         
     </channel>

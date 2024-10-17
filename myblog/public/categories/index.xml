@@ -7,20 +7,52 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>刘龙龙</copyright>
-        <lastBuildDate>Wed, 16 Oct 2024 21:15:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Git</title>
-        <link>http://localhost:1313/categories/git/</link>
-        <pubDate>Wed, 16 Oct 2024 21:15:12 +0800</pubDate>
+        <lastBuildDate>Wed, 16 Oct 2024 22:01:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Gorm</title>
+        <link>http://localhost:1313/categories/gorm/</link>
+        <pubDate>Wed, 16 Oct 2024 22:01:54 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/git/</guid>
+        <guid>http://localhost:1313/categories/gorm/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>理解输出</title>
+        <link>http://localhost:1313/categories/%E7%90%86%E8%A7%A3%E8%BE%93%E5%87%BA/</link>
+        <pubDate>Wed, 16 Oct 2024 22:01:54 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E7%90%86%E8%A7%A3%E8%BE%93%E5%87%BA/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Gin</title>
+        <link>http://localhost:1313/categories/gin/</link>
+        <pubDate>Wed, 16 Oct 2024 21:59:48 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/gin/</guid>
         <description></description>
         </item>
         <item>
         <title>基础</title>
         <link>http://localhost:1313/categories/%E5%9F%BA%E7%A1%80/</link>
-        <pubDate>Wed, 16 Oct 2024 21:15:12 +0800</pubDate>
+        <pubDate>Wed, 16 Oct 2024 21:40:40 +0800</pubDate>
         
         <guid>http://localhost:1313/categories/%E5%9F%BA%E7%A1%80/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>快捷键</title>
+        <link>http://localhost:1313/categories/%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+        <pubDate>Wed, 16 Oct 2024 21:40:40 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Git</title>
+        <link>http://localhost:1313/categories/git/</link>
+        <pubDate>Wed, 16 Oct 2024 21:15:12 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/git/</guid>
         <description></description>
         </item>
         <item>

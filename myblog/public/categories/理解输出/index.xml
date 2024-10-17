@@ -7,13 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>刘龙龙</copyright>
-        <lastBuildDate>Wed, 16 Oct 2024 21:59:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%90%86%E8%A7%A3%E8%BE%93%E5%87%BA/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 16 Oct 2024 22:01:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%90%86%E8%A7%A3%E8%BE%93%E5%87%BA/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>对gorm的理解</title>
+        <link>http://localhost:1313/p/%E5%AF%B9gorm%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+        <pubDate>Wed, 16 Oct 2024 22:01:54 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E5%AF%B9gorm%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+        <description>&lt;h1 id=&#34;对gorm的理解&#34;&gt;对gorm的理解
+&lt;/h1&gt;</description>
+        </item>
+        <item>
         <title>对Gin的理解</title>
         <link>http://localhost:1313/p/%E5%AF%B9gin%E7%9A%84%E7%90%86%E8%A7%A3/</link>
         <pubDate>Wed, 16 Oct 2024 21:59:48 +0800</pubDate>
         
         <guid>http://localhost:1313/p/%E5%AF%B9gin%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
-        <description></description>
+        <description>&lt;h1 id=&#34;对gin的理解&#34;&gt;对Gin的理解
+&lt;/h1&gt;</description>
         </item>
         
     </channel>

@@ -3,7 +3,7 @@ title: Markdown基础用法
 description: 持续更新中
 date: 2024-10-16
 slug: Markdown基础用法
-# image: 1729065995121.jpg
+image: https://img.17sucai.com/attachment/3/2023-07-03/2023070323257.png?x-oss-process=style/ready
 categories:
   - Markdown
   - 基础
