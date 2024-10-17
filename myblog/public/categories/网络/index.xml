@@ -103,8 +103,48 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;特殊场景工勘&#34;&gt;特殊场景工勘
-&lt;/h3&gt;</description>
+&lt;h3 id=&#34;企业级认证&#34;&gt;企业级认证
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;认证流程：
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;PC端：&lt;/p&gt;
+&lt;p&gt;点击无线&amp;ndash;&amp;gt;输入用户名和密码&amp;ndash;&amp;gt;认证成功&amp;ndash;&amp;gt;分配IP地址上网&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;手机端：&lt;/p&gt;
+&lt;p&gt;点击无线&amp;ndash;&amp;gt;输入用户名和密码&amp;ndash;&amp;gt;认证成功&amp;ndash;&amp;gt;分配IP地址上网&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;企业级认证原理介绍&#34;&gt;企业级认证原理介绍
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;企业级认证（即802.1X认证）为典型的Client/Server结构，包括三个实体：客户端、接入设备和认证服务器。
+&lt;ul&gt;
+&lt;li&gt;客户端是位于局域网段一端的一个实体，由该链路另一端的接入设备对其进行认证。
+&lt;ul&gt;
+&lt;li&gt;用户可以通过启动客户端软件发起802.1x认证。客户端必须支持局域网上的可扩展认证协议EAPOL&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;接入设备是位于局域网段一端的另一个实体，对所连接的客户端进行认证。
+&lt;ul&gt;
+&lt;li&gt;接入设备通常为支持802.1x协议的网络设备，它为客户端提供接入局域网的接口，在无线中，接入设备指的是无线AP。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;认证服务器是为接入设备提供认证服务的实体。
+&lt;ul&gt;
+&lt;li&gt;认证服务器用于对用户进行认证、授权和计费，通常为RADIUS服务器，信锐NAC内置RADIUS服务器，也可以对接外部的RADIUS服务器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;eap协议报文的交互形式&#34;&gt;EAP协议报文的交互形式
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;EAP协议报文使用EAPOL封装格式，并直接承载于LAN环境中&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         </item>
         
     </channel>

@@ -15,7 +15,7 @@
         <guid>http://localhost:1313/p/%E5%AF%B9gin%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
         <description>&lt;h1 id=&#34;对gin的理解&#34;&gt;对Gin的理解
 &lt;/h1&gt;&lt;h2 id=&#34;gin简介&#34;&gt;Gin简介
-&lt;/h2&gt;&lt;p&gt;Gin 框架是 Go 语言中常用的一个高效、轻量级的 Web 框架。它的设计目标是简化 HTTP 服务器的开发，提供易用的接口，同时保证性能优势。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;Gin是一个使用Go语言开发的Web框架。 它提供类似Martini的API,是 Go 语言中常用的一个高效、轻量级的 Web 框架。它的设计目标是简化 HTTP 服务器的开发，提供易用的接口，同时保证性能优势。&lt;/p&gt;
 &lt;h3 id=&#34;特点&#34;&gt;特点
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;高性能：Gin 是基于 net/http 标准库构建的，具有非常好的性能，适合处理高并发场景。&lt;/li&gt;
