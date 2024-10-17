@@ -66,7 +66,7 @@ params:
 
     sidebar:
         emoji: 🍥
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        subtitle: 加油减肥中...
         avatar:
             enabled: true
             local: true
