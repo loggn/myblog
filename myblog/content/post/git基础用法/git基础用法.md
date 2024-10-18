@@ -3,6 +3,7 @@ title: Git基础用法
 description: 持续更新中
 date: 2024-10-16T21:15:12+08:00
 slug: Git基础用法
+image: https://pic.netbian.com/uploads/allimg/231016/223346-16974668265cf4.jpg
 categories:
   - git
   - 基础
