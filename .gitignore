@@ -1,0 +1,45 @@
+# Hugo files
+public/
+resources/_gen/
+assets/jsconfig.json
+hugo_stats.json
+
+# Temporary or backup files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Node.js dependencies (if you use npm or yarn)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Sass/SCSS cache (if you use sass)
+.sass-cache/
+
+# Logs and lock files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Backup files created by editors
+*.bak
+*.backup
+*.orig
+*.tmp
+
+# Hugo-related binary files
+*.hugo
+
+# Hugo preview server
+hugo_server.log
