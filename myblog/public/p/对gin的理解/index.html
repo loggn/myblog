@@ -10,9 +10,10 @@
 <meta property='og:description' content="持续更新中">
 <meta property='og:url' content='http://localhost:1313/p/%E5%AF%B9gin%E7%9A%84%E7%90%86%E8%A7%A3/'>
 <meta property='og:site_name' content='刘龙龙'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-16T21:59:48&#43;08:00'/><meta property='article:modified_time' content='2024-10-16T21:59:48&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-16T21:59:48&#43;08:00'/><meta property='article:modified_time' content='2024-10-16T21:59:48&#43;08:00'/><meta property='og:image' content='https://pic.netbian.com/uploads/allimg/240410/223535-17127597352a25.jpg' />
 <meta name="twitter:title" content="对Gin的理解">
-<meta name="twitter:description" content="持续更新中">
+<meta name="twitter:description" content="持续更新中"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://pic.netbian.com/uploads/allimg/240410/223535-17127597352a25.jpg' />
     <link rel="shortcut icon" href="https://moegirl.uk/images/c/c7/Roshidere_chara03.png" />
 
     </head>
@@ -270,11 +271,44 @@
     <li><a href="#gin简介">Gin简介</a>
       <ol>
         <li><a href="#特点">特点</a></li>
+        <li><a href="#核心概念与功能">核心概念与功能</a></li>
+        <li><a href="#gin-的应用场景">Gin 的应用场景</a></li>
       </ol>
     </li>
-    <li><a href="#核心概念与功能">核心概念与功能</a></li>
-    <li><a href="#gin-的应用场景">Gin 的应用场景</a></li>
-    <li><a href="#常用的命令语句">常用的命令语句</a></li>
+    <li><a href="#个简单的gin应用">个简单的Gin应用</a>
+      <ol>
+        <li><a href="#rgetping-funcc-gincontext"><code>r.GET(&quot;/ping&quot;, func(c *gin.Context){})</code></a></li>
+        <li><a href="#cjson200-ginh"><code>c.JSON(200, gin.H{})</code></a></li>
+      </ol>
+    </li>
+    <li><a href="#gin使用">Gin使用</a>
+      <ol>
+        <li><a href="#带参路由与查询参数处理">带参路由与查询参数处理</a></li>
+        <li><a href="#json-解析和绑定">JSON 解析和绑定</a></li>
+        <li><a href="#处理请求头中内容">处理请求头中内容</a></li>
+        <li><a href="#文件接收与处理">文件接收与处理</a></li>
+        <li><a href="#路由组网上内容后期替换">路由组(网上内容，后期替换)</a></li>
+        <li><a href="#模板渲染网上内容后期替换">模板渲染(网上内容，后期替换)</a></li>
+        <li><a href="#静态文件服务">静态文件服务</a></li>
+      </ol>
+    </li>
+    <li><a href="#补充知识">补充知识</a>
+      <ol>
+        <li><a href="#c-gincontext的方法"><code>c *gin.Context</code>的方法</a></li>
+        <li><a href="#请求方法与路由">请求方法与路由</a>
+          <ol>
+            <li><a href="#常用的http方法有">常用的HTTP方法有</a></li>
+            <li><a href="#路由">路由</a></li>
+          </ol>
+        </li>
+        <li><a href="#状态码">状态码</a>
+          <ol>
+            <li><a href="#http-状态码分类">HTTP 状态码分类：</a></li>
+          </ol>
+        </li>
+        <li><a href="#常见的状态码解释">常见的状态码解释：</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -286,8 +320,16 @@
 
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E5%AF%B9gin%E7%9A%84%E7%90%86%E8%A7%A3/">
+                
+                    <img src="https://pic.netbian.com/uploads/allimg/240410/223535-17127597352a25.jpg" loading="lazy" alt="Featured image of post 对Gin的理解" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
@@ -347,7 +389,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 7 分钟
                 </time>
             </div>
         
@@ -364,30 +406,603 @@
     
     <h1 id="对gin的理解">对Gin的理解
 </h1><h2 id="gin简介">Gin简介
-</h2><p>Gin是一个使用Go语言开发的Web框架。 它提供类似Martini的API,是 Go 语言中常用的一个高效、轻量级的 Web 框架。它的设计目标是简化 HTTP 服务器的开发，提供易用的接口，同时保证性能优势。</p>
+</h2><ul>
+<li>以下内容参考<a class="link" href="https://gin-gonic.com/zh-cn/"  target="_blank" rel="noopener"
+    >Gin Web Framework</a></li>
+</ul>
+<p><strong>什么是Gin?</strong> Gin是一个使用Go语言开发的Web框架。 它提供类似Martini的API，但性能更佳，速度提升高达40倍。 如果你是性能和高效的追求者, 你会爱上 Gin。</p>
 <h3 id="特点">特点
 </h3><ul>
-<li>高性能：Gin 是基于 net/http 标准库构建的，具有非常好的性能，适合处理高并发场景。</li>
-<li>路由机制：Gin 提供了简单直观的路由定义方式，可以通过 GET、POST 等方法绑定路径和处理函数，还支持路径参数和查询参数的获取。</li>
-<li>中间件支持：Gin 提供了中间件机制，开发者可以通过中间件实现日志记录、认证、跨域等功能，便于实现一些请求前后处理的逻辑。</li>
-<li>自动恢复机制：Gin 具有 recovery 中间件，可以在程序遇到 panic 时自动恢复，避免服务中断。</li>
-<li>简洁的错误处理：Gin 允许在处理请求时直接返回错误状态码和错误信息，简化了错误处理逻辑。</li>
-<li>JSON 支持：Gin 对 JSON 的支持非常友好，c.JSON() 可以直接返回结构化的 JSON 响应，特别适合 API 开发。</li>
+<li>快速：基于 Radix 树的路由，小内存占用。没有反射。可预测的 API 性能。</li>
+<li>支持中间件：传入的 HTTP 请求可以由一系列中间件和最终操作来处理。 例如：Logger，Authorization，GZIP，最终操作 DB。</li>
+<li>Crash 处理：Gin 可以 catch 一个发生在 HTTP 请求中的 panic 并 recover 它。这样，你的服务器将始终可用。例如，你可以向 Sentry 报告这个 panic！</li>
+<li>JSON 验证：Gin 可以解析并验证请求的 JSON，例如检查所需值的存在。</li>
+<li>路由组：Gin帮助您更好地组织您的路由，例如，按照需要授权和不需要授权和不同API版本进行分组。此外，路由分组可以无限嵌套而不降低性能。</li>
+<li>错误管理：Gin 提供了一种方便的方法来收集 HTTP 请求期间发生的所有错误。最终，中间件可以将它们写入日志文件，数据库并通过网络发送。</li>
+<li>内置渲染：Gin 为 JSON，XML 和 HTML 渲染提供了易于使用的 API。</li>
+<li>可扩展性：新建一个中间件非常简单。</li>
 </ul>
-<h2 id="核心概念与功能">核心概念与功能
-</h2><ul>
+<h3 id="核心概念与功能">核心概念与功能
+</h3><ul>
 <li>Context 对象：gin.Context 是处理请求的核心对象，包含了请求和响应的所有信息。开发者可以通过它获取请求参数、查询参数、表单数据、JSON 数据等，同时也可以向前端返回响应。</li>
 <li>路由定义：Gin 提供 RESTful 风格的路由支持，可以轻松定义 GET、POST、PUT、DELETE 等请求方法。路由还支持动态路径参数，如 c.Param() 可以获取路径中的参数。</li>
 <li>请求绑定与验证：Gin 支持将请求的 JSON、表单数据等绑定到结构体，并提供验证功能，如通过 ShouldBindJSON() 绑定并校验请求参数。</li>
 <li>文件上传：Gin 支持多部分表单数据（multipart form）的解析，处理文件上传操作非常简便。</li>
 </ul>
-<h2 id="gin-的应用场景">Gin 的应用场景
-</h2><ul>
+<h3 id="gin-的应用场景">Gin 的应用场景
+</h3><ul>
 <li>Gin 适用于开发轻量级、高并发的 Web 服务和 API 项目，尤其是需要快速开发、性能优先的场景。</li>
 <li>由于 Gin 的 API 设计简洁易用，并且扩展性强，它在微服务架构中也非常常见。</li>
 </ul>
-<h2 id="常用的命令语句">常用的命令语句
-</h2>
+<h2 id="个简单的gin应用">个简单的Gin应用
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">package</span> <span class="n">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="s2">&#34;github.com/gin-gonic/gin&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">r</span> <span class="p">:</span><span class="o">=</span> <span class="n">gin</span><span class="o">.</span><span class="n">Default</span><span class="p">()</span> <span class="o">//</span> <span class="err">创建带有默认中间件的路由器</span><span class="p">(</span><span class="n">Logger和Recovery</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">定义一个</span> <span class="n">GET</span> <span class="err">路由，处理</span> <span class="o">/</span><span class="n">ping</span> <span class="err">请求</span>
+</span></span><span class="line"><span class="cl">  <span class="n">r</span><span class="o">.</span><span class="n">GET</span><span class="p">(</span><span class="s2">&#34;/ping&#34;</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">gin</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">//</span><span class="err">将结果以</span> <span class="n">JSON</span> <span class="err">格式返回给客户端。</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;pong&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">启动服务，监听在</span> <span class="mi">8080</span> <span class="err">端口</span>
+</span></span><span class="line"><span class="cl">  <span class="n">r</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="s2">&#34;:8080&#34;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="rgetping-funcc-gincontext"><code>r.GET(&quot;/ping&quot;, func(c *gin.Context){})</code>
+</h3><ul>
+<li><code>GET</code>是请求方法</li>
+<li><code>/ping</code>是路由，它可以根据需要自行定义</li>
+<li><code>func(c *gin.Context)</code>是处理函数</li>
+<li><code>c</code> 是上下文对象</li>
+</ul>
+<hr>
+<h3 id="cjson200-ginh"><code>c.JSON(200, gin.H{})</code>
+</h3><ul>
+<li><code>c.JSON()</code>返回 JSON 格式的响应</li>
+<li><code>200</code>状态码</li>
+<li><code>gin.H{}</code>等同于<code>map[string]interface{}{...}</code>通常用于返回 JSON 数据或者向 HTML 模板传递数据。
+<ul>
+<li>ps:<code>interface{} </code>是 Go 语言中的万能类型，任何类型都可以作为它的值</li>
+</ul>
+</li>
+</ul>
+<h2 id="gin使用">Gin使用
+</h2><h3 id="带参路由与查询参数处理">带参路由与查询参数处理
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">r.GET(&#34;/ping/:studentID&#34;, func(c *gin.Context) {
+</span></span><span class="line"><span class="cl">		// 从 URL 中获取 studentID
+</span></span><span class="line"><span class="cl">		studentID := c.Param(&#34;studentID&#34;)
+</span></span><span class="line"><span class="cl">		// 获取查询参数 name
+</span></span><span class="line"><span class="cl">		name := c.Query(&#34;name&#34;)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    //数据处理逻辑...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    //返回响应内容
+</span></span><span class="line"><span class="cl">		c.JSON(200, gin.H{
+</span></span><span class="line"><span class="cl">			&#34;isfind&#34;: &#34;true&#34;,
+</span></span><span class="line"><span class="cl">		})
+</span></span><span class="line"><span class="cl">	})
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="json-解析和绑定">JSON 解析和绑定
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">type</span> <span class="n">Login</span> <span class="n">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Username</span> <span class="n">string</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s2">&#34;username&#34;</span><span class="err">`</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Password</span> <span class="n">string</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s2">&#34;password&#34;</span><span class="err">`</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">r</span><span class="o">.</span><span class="n">POST</span><span class="p">(</span><span class="s2">&#34;/api/user/auth&#34;</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">gin</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="o">//</span> <span class="err">从请求体中读取</span> <span class="n">POST</span> <span class="err">表单参数</span>
+</span></span><span class="line"><span class="cl">		<span class="k">var</span> <span class="n">json</span> <span class="n">Login</span>
+</span></span><span class="line"><span class="cl">		<span class="o">//</span> <span class="err">绑定</span><span class="n">JSON数据到结构体</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">err</span> <span class="p">:</span><span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">ShouldBindJSON</span><span class="p">(</span><span class="o">&amp;</span><span class="n">json</span><span class="p">);</span> <span class="n">err</span> <span class="o">!=</span> <span class="n">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusBadRequest</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span><span class="s2">&#34;error&#34;</span><span class="p">:</span> <span class="n">err</span><span class="o">.</span><span class="n">Error</span><span class="p">()})</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">//</span><span class="err">从结构体中拿出数据</span>
+</span></span><span class="line"><span class="cl">		<span class="n">username</span> <span class="p">:</span><span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">Username</span>
+</span></span><span class="line"><span class="cl">		<span class="n">password</span> <span class="p">:</span><span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">Password</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">//</span><span class="err">处理数据</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="o">//</span><span class="err">返回响应内容</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;code&#34;</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;token&#34;</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;code&#34;</span><span class="p">:</span>    <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;账号或者密码错误&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="p">})</span>
+</span></span><span class="line"><span class="cl">		<span class="p">})</span>
+</span></span><span class="line"><span class="cl">	
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="处理请求头中内容">处理请求头中内容
+</h3><ul>
+<li>这里以Authorization为例</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="n">GET</span><span class="p">(</span><span class="s2">&#34;/api/user/data/student&#34;</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">gin</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">fmt</span><span class="o">.</span><span class="n">Print</span><span class="p">(</span><span class="s2">&#34;1111&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">authHeader</span> <span class="p">:</span><span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">GetHeader</span><span class="p">(</span><span class="s2">&#34;Authorization&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">authHeader</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">authHeader</span> <span class="o">==</span> <span class="s2">&#34;&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="mi">401</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;code&#34;</span><span class="p">:</span>    <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;未提供认证方式&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="p">})</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">token</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">len</span><span class="p">(</span><span class="n">authHeader</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">7</span> <span class="o">&amp;&amp;</span> <span class="n">authHeader</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;Bearer &#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">token</span> <span class="o">=</span> <span class="n">authHeader</span><span class="p">[</span><span class="mi">7</span><span class="p">:]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;code&#34;</span><span class="p">:</span>    <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;无效的认证方式&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="p">})</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">valid</span><span class="p">,</span> <span class="n">err</span> <span class="p">:</span><span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">VerifyToken</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="n">nil</span> <span class="o">||</span> <span class="o">!</span><span class="n">valid</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="mi">403</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;code&#34;</span><span class="p">:</span>    <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;无效的token&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="p">})</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="k">var</span> <span class="n">users</span> <span class="p">[]</span><span class="n">utils</span><span class="o">.</span><span class="n">StudentNew</span>
+</span></span><span class="line"><span class="cl">		<span class="n">result</span> <span class="p">:</span><span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">DB</span><span class="o">.</span><span class="n">Find</span><span class="p">(</span><span class="o">&amp;</span><span class="n">users</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">Error</span> <span class="o">!=</span> <span class="n">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;code&#34;</span><span class="p">:</span>    <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;查询出错&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="p">})</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">users</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="文件接收与处理">文件接收与处理
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">r</span><span class="o">.</span><span class="n">POST</span><span class="p">(</span><span class="s2">&#34;/api/file/data/import/excel&#34;</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">gin</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">file</span><span class="p">,</span> <span class="n">err</span> <span class="p">:</span><span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">FormFile</span><span class="p">(</span><span class="s2">&#34;file&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="n">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusBadRequest</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span><span class="s2">&#34;error&#34;</span><span class="p">:</span> <span class="s2">&#34;文件上传失败&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="o">//</span> <span class="err">保存文件到本地</span>
+</span></span><span class="line"><span class="cl">		<span class="n">filePath</span> <span class="p">:</span><span class="o">=</span> <span class="n">filepath</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">&#34;./&#34;</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">Filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">err</span> <span class="p">:</span><span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">SaveUploadedFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">filePath</span><span class="p">);</span> <span class="n">err</span> <span class="o">!=</span> <span class="n">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusInternalServerError</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span><span class="s2">&#34;error&#34;</span><span class="p">:</span> <span class="s2">&#34;文件保存失败&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="o">//</span> <span class="err">解析文件并存储到数据库</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">err</span> <span class="p">:</span><span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">ParseAndSaveExcel</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span> <span class="n">err</span> <span class="o">!=</span> <span class="n">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusInternalServerError</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span><span class="s2">&#34;error&#34;</span><span class="p">:</span> <span class="s2">&#34;文件解析失败&#34;</span><span class="p">,</span> <span class="s2">&#34;details&#34;</span><span class="p">:</span> <span class="n">err</span><span class="o">.</span><span class="n">Error</span><span class="p">()})</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">//</span><span class="err">返回响应内容</span>
+</span></span><span class="line"><span class="cl">		<span class="n">c</span><span class="o">.</span><span class="n">JSON</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusOK</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="s2">&#34;code&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="s2">&#34;data&#34;</span><span class="p">:</span> <span class="n">filePath</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="p">})</span>
+</span></span><span class="line"><span class="cl">	<span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="路由组网上内容后期替换">路由组(网上内容，后期替换)
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">package</span> <span class="n">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;github.com/gin-gonic/gin&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">router</span> <span class="p">:</span><span class="o">=</span> <span class="n">gin</span><span class="o">.</span><span class="n">Default</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="o">//</span> <span class="err">路由组</span>
+</span></span><span class="line"><span class="cl">	<span class="n">v1</span> <span class="p">:</span><span class="o">=</span> <span class="n">router</span><span class="o">.</span><span class="n">Group</span><span class="p">(</span><span class="s2">&#34;/api/v1&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">v1</span><span class="o">.</span><span class="n">GET</span><span class="p">(</span><span class="s2">&#34;/users&#34;</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">gin</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&#34;List of users&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">})</span>
+</span></span><span class="line"><span class="cl">		<span class="n">v1</span><span class="o">.</span><span class="n">POST</span><span class="p">(</span><span class="s2">&#34;/users&#34;</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">gin</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&#34;Create a user&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">})</span>
+</span></span><span class="line"><span class="cl">		<span class="n">v1</span><span class="o">.</span><span class="n">PUT</span><span class="p">(</span><span class="s2">&#34;/users/:id&#34;</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">gin</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">id</span> <span class="p">:</span><span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span><span class="s2">&#34;id&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&#34;Update user with ID: </span><span class="si">%s</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">})</span>
+</span></span><span class="line"><span class="cl">		<span class="n">v1</span><span class="o">.</span><span class="n">DELETE</span><span class="p">(</span><span class="s2">&#34;/users/:id&#34;</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">gin</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">id</span> <span class="p">:</span><span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span><span class="s2">&#34;id&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">c</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s2">&#34;Delete user with ID: </span><span class="si">%s</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">})</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">router</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="s2">&#34;:8080&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="模板渲染网上内容后期替换">模板渲染(网上内容，后期替换)
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">package</span> <span class="n">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;github.com/gin-gonic/gin&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;net/http&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">router</span> <span class="p">:</span><span class="o">=</span> <span class="n">gin</span><span class="o">.</span><span class="n">Default</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="o">//</span> <span class="err">加载模板文件</span>
+</span></span><span class="line"><span class="cl">	<span class="n">router</span><span class="o">.</span><span class="n">LoadHTMLGlob</span><span class="p">(</span><span class="s2">&#34;templates/*&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="o">//</span> <span class="err">定义路由处理函数，渲染模板</span>
+</span></span><span class="line"><span class="cl">	<span class="n">router</span><span class="o">.</span><span class="n">GET</span><span class="p">(</span><span class="s2">&#34;/hello&#34;</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span><span class="n">gin</span><span class="o">.</span><span class="n">Context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">c</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">StatusOK</span><span class="p">,</span> <span class="s2">&#34;hello.tmpl&#34;</span><span class="p">,</span> <span class="n">gin</span><span class="o">.</span><span class="n">H</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="s2">&#34;title&#34;</span><span class="p">:</span> <span class="s2">&#34;Hello, Gin!&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="p">})</span>
+</span></span><span class="line"><span class="cl">	<span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">router</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="s2">&#34;:8080&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="静态文件服务">静态文件服务
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">package</span> <span class="n">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="s2">&#34;github.com/gin-gonic/gin&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">router</span> <span class="p">:</span><span class="o">=</span> <span class="n">gin</span><span class="o">.</span><span class="n">Default</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="o">//</span> <span class="err">从相对路径</span> <span class="s2">&#34;assets&#34;</span> <span class="err">提供静态文件</span>
+</span></span><span class="line"><span class="cl">	<span class="n">router</span><span class="o">.</span><span class="n">Static</span><span class="p">(</span><span class="s2">&#34;/static&#34;</span><span class="p">,</span> <span class="s2">&#34;./assets&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="o">//</span> <span class="err">从绝对路径</span> <span class="s2">&#34;/tmp&#34;</span> <span class="err">提供静态文件</span>
+</span></span><span class="line"><span class="cl">	<span class="n">router</span><span class="o">.</span><span class="n">StaticFS</span><span class="p">(</span><span class="s2">&#34;/static2&#34;</span><span class="p">,</span> <span class="n">http</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s2">&#34;/tmp&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="o">//</span> <span class="err">提供单个静态文件</span>
+</span></span><span class="line"><span class="cl">	<span class="n">router</span><span class="o">.</span><span class="n">StaticFile</span><span class="p">(</span><span class="s2">&#34;/favicon.ico&#34;</span><span class="p">,</span> <span class="s2">&#34;./resources/favicon.ico&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">router</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="s2">&#34;:8080&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="补充知识">补充知识
+</h2><h3 id="c-gincontext的方法"><code>c *gin.Context</code>的方法
+</h3><ul>
+<li><code>c.ShouldBindJSON()</code>获取JSON格式数据</li>
+<li><code>c.Param()</code>从URL中获取参数</li>
+<li><code>c.Query()</code>获取查询参数</li>
+<li><code>c.FormFile()</code>获取文件</li>
+<li><code>c.GetHeader()</code>获取请求头</li>
+<li><code>c.SaveUploadedFile()</code>保存文件</li>
+</ul>
+<h3 id="请求方法与路由">请求方法与路由
+</h3><h4 id="常用的http方法有">常用的HTTP方法有
+</h4><ul>
+<li>GET：用于从服务器获取资源。</li>
+<li>POST：用于向服务器发送数据或提交表单。</li>
+<li>PUT：用于更新服务器上的资源。</li>
+<li>DELETE：用于删除服务器上的资源。</li>
+</ul>
+<h4 id="路由">路由
+</h4><ul>
+<li>静态路由：简单的固定路径，比如<code>/ping</code></li>
+<li>动态路由：也叫参数化路由，路径中包含变量占位符，比如<code>/ping/:id</code>
+<ul>
+<li>当用户访问 /user/123 时，Gin 会解析 :id 并将其值作为参数传递给处理函数。在处理函数中通过 c.Param(&ldquo;id&rdquo;) 获取该值</li>
+</ul>
+</li>
+</ul>
+<h3 id="状态码">状态码
+</h3><h4 id="http-状态码分类">HTTP 状态码分类：
+</h4><ul>
+<li>
+<p>1xx - 信息性响应（Informational Responses）： 表示请求已经被接收，继续处理。</p>
+<ul>
+<li>100 Continue：服务器已经接收到请求的初始部分，客户端可以继续发送请求的其余部分。</li>
+<li>101 Switching Protocols：请求者要求服务器切换协议，服务器确认切换。</li>
+</ul>
+</li>
+<li>
+<p>2xx - 成功（Success）： 表示请求成功并被服务器处理。</p>
+<ul>
+<li>200 OK：请求成功，服务器返回所请求的数据。</li>
+<li>201 Created：请求已成功，并且资源已经被创建（常见于 POST 请求创建新资源的场景）。</li>
+<li>204 No Content：请求成功，但没有返回内容（如执行了 DELETE 请求后没有内容需要返回）。</li>
+</ul>
+</li>
+<li>
+<p>3xx - 重定向（Redirection）： 表示客户端需要进一步操作才能完成请求，通常是重定向。</p>
+<ul>
+<li>301 Moved Permanently：资源的 URL 已被永久更改，客户端应使用新的 URL。</li>
+<li>302 Found：资源临时重定向到新的 URL。</li>
+<li>304 Not Modified：资源未被修改，客户端可以使用缓存的版本。</li>
+</ul>
+</li>
+<li>
+<p>4xx - 客户端错误（Client Errors）： 表示请求存在错误，客户端需要修改请求才能继续。</p>
+<ul>
+<li>400 Bad Request：请求有语法错误，服务器无法理解。</li>
+<li>401 Unauthorized：请求未经授权，需进行身份验证。</li>
+<li>403 Forbidden：服务器拒绝执行请求，即使请求经过身份验证。</li>
+<li>404 Not Found：请求的资源不存在或无法找到。</li>
+<li>405 Method Not Allowed：请求的 HTTP 方法（如 GET、POST）不被允许。</li>
+</ul>
+</li>
+<li>
+<p>5xx - 服务器错误（Server Errors）： 表示服务器在处理请求时发生了内部错误。</p>
+<ul>
+<li>500 Internal Server Error：服务器遇到未知错误，无法处理请求。</li>
+<li>501 Not Implemented：服务器不支持请求所需的功能。</li>
+<li>502 Bad Gateway：服务器作为网关或代理，从上游服务器接收到无效响应。</li>
+<li>503 Service Unavailable：服务器暂时无法处理请求，通常是因为服务器超载或维护。</li>
+</ul>
+</li>
+</ul>
+<h3 id="常见的状态码解释">常见的状态码解释：
+</h3><ul>
+<li>200 OK：表示请求正常处理并返回成功。</li>
+<li>400 Bad Request：表示客户端发送的请求有问题，通常是因为格式错误。</li>
+<li>401 Unauthorized：表示用户没有权限访问请求的资源，通常需要身份验证。</li>
+<li>403 Forbidden：表示请求被服务器拒绝，用户没有权限，即使身份验证通过。</li>
+<li>404 Not Found：表示请求的资源不存在，可能是 URL 错误。</li>
+<li>500 Internal Server Error：表示服务器内部错误，导致请求无法完成。</li>
+</ul>
+
 </section>
 
 

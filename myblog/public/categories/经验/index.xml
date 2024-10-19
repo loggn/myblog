@@ -15,7 +15,14 @@
         <guid>http://localhost:1313/p/%E9%97%AF%E7%A5%B8%E5%B0%8F%E5%90%88%E9%9B%86/</guid>
         <description>&lt;img src="https://www.ejdz.cn/uploads/images/kind/20221025/20221025101907_38470.jpg" alt="Featured image of post 闯祸小合集" /&gt;&lt;h1 id=&#34;基础语法错误&#34;&gt;基础语法错误
 &lt;/h1&gt;&lt;h2 id=&#34;力扣刷题错误&#34;&gt;力扣刷题错误：
-&lt;/h2&gt;</description>
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;问题：将数字转成字符串来处理没使用strconv.Itoa(x)，而是直接string(x)，导致出错。
+&lt;ul&gt;
+&lt;li&gt;原因：string(x)会将整数作为字符的 ASCII 码值进行转换，而不是将其转换为字符串表示形式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         </item>
         
     </channel>
