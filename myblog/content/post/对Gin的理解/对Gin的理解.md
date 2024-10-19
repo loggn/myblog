@@ -3,6 +3,7 @@ title: 对Gin的理解
 description: 持续更新中
 date: 2024-10-16T21:59:48+08:00
 slug: 对Gin的理解
+image: https://pic.netbian.com/uploads/allimg/240410/223535-17127597352a25.jpg
 categories:
   - Gin
   - 理解输出
