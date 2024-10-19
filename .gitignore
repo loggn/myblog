@@ -4,6 +4,9 @@ resources/_gen/
 assets/jsconfig.json
 hugo_stats.json
 
+# 不要上传全量hugo！
+hugo.exe
+
 # Temporary or backup files
 *.tmp
 *.bak
